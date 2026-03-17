@@ -8,6 +8,8 @@ public class Main {
 		
 		Scanner scan = new Scanner(System.in);
 		
+		System.out.println("PRIMO ESERCIZIO: CALCOLATRICE");
+		
 		System.out.println("Inserisci il primo numero");
 		float x = scan.nextFloat();
 		
@@ -37,9 +39,23 @@ public class Main {
 			case '/':
 				System.out.println("La divisione dei due numeri è: "+calc.division());
 				break;
+			default:
+				System.out.println("OPERAZIONE NON VALIDA");
+				break;
 			
 		}
 		
+		System.out.println("SECONDO ESERCIZIO");
+		
+		System.out.println("Inserire la base");
+		float base = scan.nextFloat();
+		System.out.println("Inserire l'altezza");
+		float height = scan.nextFloat();
+		
+		Rettangolo rettangolo = new Rettangolo(base, height);
+		
+		System.out.println("Il perimetro del rettangolo è: "+rettangolo.calculatePerimeter());
+		System.out.println("L'area del rettangolo è: "+rettangolo.calculateArea());
 		scan.close();
 		
 	}
