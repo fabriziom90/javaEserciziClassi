@@ -58,6 +58,44 @@ public class Main {
 		System.out.println("L'area del rettangolo è: "+rettangolo.calculateArea());
 		scan.close();
 		
+		ContoBancario contoUno = new ContoBancario(100);
+		ContoBancario contoDue = new ContoBancario(-100);
+		
+		System.out.println(contoUno.getSaldo());
+		System.out.println(contoDue.getSaldo());
+		
+		System.out.println("-----CONTO UNO-----");
+		boolean depositContoUno = contoUno.deposita(-20);
+		if(depositContoUno)
+			System.out.println("Deposito effettuato. Il nuovo saldo è di: "+contoUno.getSaldo());
+		else
+			System.out.println("Deposito non effettuato. Inserito importo negativo");
+			
+		
+		boolean prelievoContoUno = contoUno.preleva(500);
+		
+		if(prelievoContoUno)
+			System.out.println("Prelievo effettuato. Il nuovo saldo è di: "+contoUno.getSaldo());
+		else
+			System.out.println("Prelievo non effettuato. Controlla il valore dell'importo da prelevare");
+			
+		
+		System.out.println("-----CONTO DUE-----");
+		boolean depositContoDue = contoDue.deposita(500);
+		if(depositContoDue)
+			System.out.println("Deposito effettuato. Il nuovo saldo è di: "+contoDue.getSaldo());
+		else
+			System.out.println("Deposito non effettuato. Inserito importo negativo");
+			
+		
+		boolean prelievoContoDue = contoDue.preleva(100);
+		
+		if(prelievoContoDue)
+			System.out.println("Prelievo effettuato. Il nuovo saldo è di: "+contoDue.getSaldo());
+		else
+			System.out.println("Prelievo non effettuato. Controlla il valore dell'importo da prelevare");
+			
+		
 	}
 
 }
